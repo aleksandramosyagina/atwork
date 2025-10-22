@@ -1,0 +1,13 @@
+$background-color: #F4F4F4;
+$primary-color: #FDFDFD;
+$text-color: #161616;
+$text-gray-light: #DADADA;
+$text-gray-medium: #9C9C9C;
+$text-gray-dark: #595959;
+$accent-color: #22A0BC;
+
+body {
+  background-color: $background-color;
+  color: $text-color;
+  font-family: Manrope, sans-serif;
+}

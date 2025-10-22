@@ -1,0 +1,11 @@
+@import '../../../../shared//styles/global.module.scss';
+
+.card {
+    width: 360px;
+    height: 168px;
+    background-color: $primary-color;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
