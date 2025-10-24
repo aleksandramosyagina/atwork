@@ -1,16 +1,18 @@
 import UserCard from "../../../features/user/ui/UserCard";
-import { useUsersQuery } from "../../../entitites/user/api/queries"; 
+import { useUsersQuery } from "../../../entitites/user/api/queries";
+import styles from "./styles.module.scss";
+import avatar from "./../../../assets/avatar.jpg";
 
 interface User {
   id: number;
   name: string;
   city: string;
   company: string;
-  avatar: string; 
+  avatar: string;
 }
 
 export const UserList = () => {
-  const { data: apiUsers, isLoading, error } = useUsersQuery(); 
+  const { data: apiUsers, isLoading, error } = useUsersQuery();
 
   const users: User[] = apiUsers
     ? apiUsers.slice(0, 6).map((apiUser) => ({
@@ -18,27 +20,29 @@ export const UserList = () => {
         name: apiUser.name,
         city: apiUser.address.city,
         company: apiUser.company.name,
-        avatar: "https://via.placeholder.com/80?text=Avatar", 
+        avatar: avatar,
       }))
     : [];
   const handleArchive = (id: number) => console.log("Архивировать", id);
   const handleHide = (id: number) => console.log("Скрыть", id);
+  const handleEdit = (id: number) => console.log("Редактировать", id);
 
   if (isLoading) return <div>Загрузка пользователей...</div>;
   if (error) return <div>Ошибка загрузки: {error.message}</div>;
 
   return (
-    <div>
+    <div className={styles.container}>
       {users.map((user) => (
         <UserCard
           key={user.id}
           user={user}
           onArchive={handleArchive}
           onHide={handleHide}
+          onEdit={handleEdit}
         />
       ))}
     </div>
   );
 };
 
-export default UserList; 
+export default UserList;
