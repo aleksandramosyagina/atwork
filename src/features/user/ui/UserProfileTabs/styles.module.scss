@@ -1,0 +1,18 @@
+@import "../../../../shared/styles/global.module.scss";
+
+.profileNavigation {
+  //   width: 360px;
+  height: 733px;
+  background-color: $primary-color;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  border-radius: 16px;
+}
+
+.avatarImage {
+  width: 280px;
+  height: 485px;
+  border-radius: 16px;
+  margin-bottom: 16px;
+}

@@ -1,4 +1,5 @@
 import UserCard from "../../../features/user/ui/UserCard";
+import { useNavigate } from "react-router-dom";
 import { useUsersQuery } from "../../../entitites/user/api/queries";
 import styles from "./styles.module.scss";
 import avatar from "./../../../assets/avatar.jpg";
@@ -13,6 +14,7 @@ interface User {
 
 export const UserList = () => {
   const { data: apiUsers, isLoading, error } = useUsersQuery();
+  const navigate = useNavigate();
 
   const users: User[] = apiUsers
     ? apiUsers.slice(0, 6).map((apiUser) => ({
@@ -25,7 +27,9 @@ export const UserList = () => {
     : [];
   const handleArchive = (id: number) => console.log("Архивировать", id);
   const handleHide = (id: number) => console.log("Скрыть", id);
-  const handleEdit = (id: number) => console.log("Редактировать", id);
+  const handleEdit = (id: number) => {
+    navigate(`/users/edit/${id}`);
+  };
 
   if (isLoading) return <div>Загрузка пользователей...</div>;
   if (error) return <div>Ошибка загрузки: {error.message}</div>;

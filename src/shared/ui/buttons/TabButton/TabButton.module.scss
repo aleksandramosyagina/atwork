@@ -1,0 +1,30 @@
+@import "../../../../shared/styles/global.module.scss";
+
+.button {
+  width: 280px;
+  height: 34px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background-color: $primary-color;
+  cursor: pointer;
+  margin-top: 24px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  color: $text-gray-medium;
+  transition: background-color 0.2s;
+
+  &:not(.active):hover {
+    color: $accent-color;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+.active {
+  color: $text-color;
+  font-weight: 600;
+}

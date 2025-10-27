@@ -1,0 +1,71 @@
+@import "../../../../shared/styles/global.module.scss";
+
+.form {
+  width: 760px;
+  height: 813px;
+  background-color: $primary-color;
+  border-radius: 16px;
+  margin: auto;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 24px;
+  color: $text-color;
+  margin: 40px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid $text-gray-light;
+}
+
+.formData {
+  margin: 40px auto 40px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 420px;
+  height: 660px;
+}
+
+.formData div {
+  display: flex;
+  flex-direction: column;
+}
+
+.formData label {
+  font-weight: 600;
+  font-size: 18px;
+  color: $text-color;
+  margin-bottom: 10px;
+}
+.formData input {
+  padding: 10px 12px;
+  border: 1px solid #dadada;
+  border-radius: 16px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+  &:focus {
+    border-color: $accent-color;
+  }
+  &::placeholder {
+    color: $text-gray-medium;
+  }
+}
+
+.submitButton {
+  width: 170px;
+  height: 46px;
+  border-radius: 16px;
+  background-color: $text-color;
+  color: $primary-color;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  margin-top: 20px;
+  margin-bottom: 40px;
+
+  &:hover {
+    background-color: $background-color;
+    color: $text-gray-dark;
+  }
+}
